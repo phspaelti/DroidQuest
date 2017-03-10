@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.Vector;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.devices.SmallChip;
 import com.droidquest.SoundClip;
 import com.droidquest.Wire;
@@ -44,7 +44,7 @@ public class Level implements ImageObserver, Serializable {
 	public Vector items = new Vector();
 	public Vector sparks = new Vector();
 
-	public transient RoomDisplay roomdisplay;
+	public transient Game roomdisplay;
 	public transient Vector invRooms = new Vector();
 	public transient Vector invRoomIndexes = new Vector();
 	public transient Vector invMaterials = new Vector();
@@ -57,10 +57,10 @@ public class Level implements ImageObserver, Serializable {
 	public transient Random random = new Random();
 	public transient static String ATTACHSOUND = "attach.WAV"; 
 	public transient static String DETATCHSOUND = "detatch.WAV"; 
-	public transient static String PICKUPSOUND = "pickup2.WAV"; 
-	public transient static String DROPSOUND = "drop2.WAV"; 
-	public transient static String BEEPSOUND = "beep2.WAV"; 
-	public transient static String BUMPSOUND = "bump2.WAV"; 
+	public transient static String PICKUPSOUND = "pickup.WAV"; 
+	public transient static String DROPSOUND = "drop.WAV"; 
+	public transient static String BEEPSOUND = "beep.WAV"; 
+	public transient static String BUMPSOUND = "bump.WAV"; 
 	public transient static String CHARGESOUND = "charge.WAV"; 
 	public transient static String DISCHARGESOUND = "discharge.WAV"; 
 	public transient static String BURNSOUND = "burn.WAV"; 
@@ -84,7 +84,7 @@ public class Level implements ImageObserver, Serializable {
 		InitSounds();
 	}
 
-	public Level(RoomDisplay rd) 
+	public Level(Game rd) 
 	{
 		roomdisplay = rd;
 		Item.level = this;

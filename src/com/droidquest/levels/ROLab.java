@@ -3,7 +3,7 @@ package com.droidquest.levels;
 import java.awt.Color;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.avatars.HelpCam;
 import com.droidquest.avatars.LabCursor;
 import com.droidquest.avatars.PaintBrush;
@@ -49,7 +49,7 @@ import com.droidquest.materials.SmallChipBurner;
 
 class ROLab extends Level 
 {
-public ROLab(RoomDisplay rd) 
+public ROLab(Game rd) 
   {
 	super(rd);
 	

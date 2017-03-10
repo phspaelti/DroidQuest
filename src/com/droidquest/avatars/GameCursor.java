@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.devices.Device;
 import com.droidquest.devices.GenericChip;
 import com.droidquest.devices.SmallChip;
@@ -370,7 +370,7 @@ public class GameCursor extends Item
 		currentIcon = icons[6+walk].getImage();
 	}
 
-	public void Draw(Graphics g, RoomDisplay rd) 
+	public void Draw(Graphics g, Game rd) 
 	{
 		g.drawImage(currentIcon, x, y, rd);
 		if (outline)

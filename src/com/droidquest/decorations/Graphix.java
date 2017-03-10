@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 
 public class Graphix implements Serializable 
 {
@@ -79,7 +79,7 @@ public void GenerateIcons()
 	icon = icons[0];
   }
 
-public void Draw(Graphics g, RoomDisplay rd) 
+public void Draw(Graphics g, Game rd) 
   {
 	if (icon != null)
 	  g.drawImage(icon.getImage(), x, y, rd);

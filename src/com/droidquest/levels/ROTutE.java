@@ -3,7 +3,7 @@ package com.droidquest.levels;
 import java.awt.Color;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.Wire;
 import com.droidquest.avatars.HelpCam;
 import com.droidquest.avatars.LabCursor;
@@ -26,7 +26,7 @@ import com.droidquest.materials.Portal;
 
 class ROTutE extends Level 
 {
-public ROTutE(RoomDisplay rd) 
+public ROTutE(Game rd) 
   {
 	super(rd);
 	

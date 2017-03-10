@@ -39,10 +39,17 @@ import java.applet.*;
 import java.net.URL;
 import java.net.MalformedURLException;
 
+/**
+ * Principal class of Droidquest
+ * Creates a window, with a menu, to serve as the GUI for the game.
+ */
 public class DQ extends JFrame implements ActionListener 
 {
-	RoomDisplay myRoom;
+	Game game;
 
+	/**
+	 * Constructor
+	 */
 	public DQ () 
 	{
 		// Constructor
@@ -57,19 +64,19 @@ public class DQ extends JFrame implements ActionListener
 		setIconImage(new ImageIcon("images/helper0.gif").getImage());
 
 		Container contentPane = getContentPane();
-		myRoom = new RoomDisplay();
-		myRoom.dq=this;
+		game = new Game();
+		game.dq=this;
 
 		addFocusListener(new FocusAdapter() 
 		{
 			public void focusGained(FocusEvent e)
 			{
-				myRoom.requestFocus();
+				game.requestFocus();
 			}
 		});
 
-		contentPane.add(myRoom);
-		myRoom.setLocation(0,0);
+		contentPane.add(game);
+		game.setLocation(0,0);
 
 		JMenuBar menuBar;
 		JMenu fileMenu;
@@ -127,7 +134,7 @@ public class DQ extends JFrame implements ActionListener
 					+ fd.getDirectory()
 					+ fd.getFile());
 			if (fd.getFile() != null)
-				myRoom.SaveLevel(fd.getDirectory()+fd.getFile());
+				game.SaveLevel(fd.getDirectory()+fd.getFile());
 		}
 
 		if (e.getActionCommand() == "Main Menu") 
@@ -136,22 +143,22 @@ public class DQ extends JFrame implements ActionListener
 					"return to Main Menu", JOptionPane.YES_NO_OPTION);
 			if (n==0)
 			{
-				myRoom.level.Empty();
-				myRoom.level = new MainMenu(myRoom);
-				myRoom.level.Init();
+				game.level.Empty();
+				game.level = new MainMenu(game);
+				game.level.Init();
 			}
 		}
 
 		if (e.getActionCommand() == "Sound") 
 		{
-			myRoom.useSounds = ((JCheckBoxMenuItem)e.getSource()).getState();
-			if (myRoom.useSounds==false)
+			game.useSounds = ((JCheckBoxMenuItem)e.getSource()).getState();
+			if (game.useSounds==false)
 			{
-				Set<String> keys = myRoom.level.sounds.keySet();
+				Set<String> keys = game.level.sounds.keySet();
 				Iterator<String> iterator = keys.iterator();
 				while (iterator.hasNext()) {
 					String soundFile = iterator.next();
-					SoundClip soundClip = myRoom.level.sounds.get(soundFile);
+					SoundClip soundClip = game.level.sounds.get(soundFile);
 					soundClip.audioClip.stop();
 				}
 //				for (int a=0; a<myRoom.level.sounds.size(); a++)

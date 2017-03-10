@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.io.File;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.avatars.GameCursor;
 import com.droidquest.avatars.HelpCam;
 import com.droidquest.decorations.Arrow;
@@ -15,7 +15,7 @@ import com.droidquest.materials.Portal;
 
 public class MainMenu extends Level 
 {
-public MainMenu(RoomDisplay rd) 
+public MainMenu(Game rd) 
   {
 	super(rd);
 	

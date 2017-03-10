@@ -3,7 +3,7 @@ package com.droidquest.levels;
 import java.awt.Color;
 
 import com.droidquest.Room;
-import com.droidquest.RoomDisplay;
+import com.droidquest.Game;
 import com.droidquest.avatars.GameCursor;
 import com.droidquest.avatars.HelpCam;
 import com.droidquest.avatars.Remote;
@@ -15,7 +15,7 @@ import com.droidquest.materials.Portal;
 
 class ROEndGame2 extends Level 
 {
-public ROEndGame2 (RoomDisplay rd) 
+public ROEndGame2 (Game rd) 
   {
 	super(rd);
 	

@@ -38,7 +38,7 @@ import com.droidquest.levels.Level;
 import com.droidquest.levels.MainMenu;
 import com.droidquest.materials.Material;
 
-public class RoomDisplay extends JPanel 
+public class Game extends JPanel 
 {  
 	public DQ dq;
 	Level level;   
@@ -65,7 +65,7 @@ public class RoomDisplay extends JPanel
 		return(true);
 	}
 
-	public RoomDisplay()  
+	public Game()  
 	{
 		setSize(new Dimension(560,384));
 		level = new MainMenu(this);
@@ -94,14 +94,14 @@ public class RoomDisplay extends JPanel
 				if (level.player.KeyUp(e))
 					repaint();
 
-				if (e.getKeyCode() == e.VK_Q)
+				if (e.getKeyCode() == KeyEvent.VK_Q)
 				{
 					if (timerspeed>1)
 						timerspeed /= 2;
 					timer.setDelay(timerspeed);
 				}
 
-				if (e.getKeyCode() == e.VK_W)
+				if (e.getKeyCode() == KeyEvent.VK_W)
 				{
 					if (timerspeed<128) 
 						timerspeed*=2;
@@ -180,13 +180,13 @@ public class RoomDisplay extends JPanel
 					catch(FileNotFoundException ie)
 					{
 						// filename does not exist
-						RoomDisplay rd = level.roomdisplay;
+						Game rd = level.roomdisplay;
 						String classname = "com.droidquest.levels."+filename.substring(0,filename.length()-4);
 						Constructor constructor = null;
 						try
 						{
 							Class newlevel = Class.forName(classname);
-							Class[] arglist = {Class.forName("com.droidquest.RoomDisplay")};
+							Class[] arglist = {Class.forName("com.droidquest.Game")};
 							constructor = newlevel.getConstructor(arglist);
 							constructor.setAccessible(true);
 						}
