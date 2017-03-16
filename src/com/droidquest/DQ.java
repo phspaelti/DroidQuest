@@ -78,6 +78,12 @@ public class DQ extends JFrame implements ActionListener
 		contentPane.add(game);
 		game.setLocation(0,0);
 
+		// Create a file menu with four items
+		//  • Save level
+		//  • Main menu
+		//  • Sound
+		//  • Exit
+		
 		JMenuBar menuBar;
 		JMenu fileMenu;
 		JMenuItem menuItemSave;
@@ -85,12 +91,16 @@ public class DQ extends JFrame implements ActionListener
 		JCheckBoxMenuItem menuItemSound;
 		JMenuItem menuItemExit;
 
+		// Set the menu bar
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
+		
+		// Create the file menu
 		fileMenu = new JMenu("File");
 		fileMenu.setMnemonic(KeyEvent.VK_F);
 		menuBar.add(fileMenu);
 
+		// Populate the file menu with items
 		menuItemSave = new JMenuItem("Save Level",KeyEvent.VK_S);
 		menuItemMain = new JMenuItem("Main Menu", KeyEvent.VK_M);
 		menuItemSound = new JCheckBoxMenuItem("Sound", true);
